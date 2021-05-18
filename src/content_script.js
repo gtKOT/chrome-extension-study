@@ -1,1 +1,3 @@
-window.alert("mini extension!");
+document.addEventListener("click", () => {
+  window.alert("clicked!");
+});
