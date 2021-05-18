@@ -1,3 +1,4 @@
 document.addEventListener("click", () => {
-  window.alert("clicked!");
+  const selectedText = window.getSelection().toString();
+  window.alert(selectedText);
 });
