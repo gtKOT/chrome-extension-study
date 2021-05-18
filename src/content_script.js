@@ -9,10 +9,25 @@ function createTextBox(text, x, y) {
   return textBox;
 }
 
+function createSearchBox(text, x, y) {
+  const searchBox = document.createElement("a");
+  searchBox.textContent = "クリックして検索";
+  searchBox.style.position = "absolute";
+  searchBox.style.left = `${x}px`;
+  searchBox.style.top = `${y}px`;
+  searchBox.style.border = "1px solid";
+  searchBox.style.backgroundColor = "white";
+  searchBox.href = `https://www.google.com/search?q=${text}`;
+  return searchBox;
+}
+
 document.addEventListener("click", ({ pageX, pageY }) => {
   const selectedText = window.getSelection().toString();
+  if (selectedText === "") {
+    return;
+  }
 
-  const textBox = createTextBox(selectedText, pageX, pageY);
+  const box = createSearchBox(selectedText, pageX, pageY);
 
-  document.body.appendChild(textBox);
+  document.body.appendChild(box);
 });
