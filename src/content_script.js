@@ -18,6 +18,8 @@ function createSearchBox(text, x, y) {
   searchBox.style.border = "1px solid";
   searchBox.style.backgroundColor = "white";
   searchBox.href = `https://www.google.com/search?q=${text}`;
+  searchBox.target = "_blank";
+  searchBox.rel = "noreferrer";
   return searchBox;
 }
 
