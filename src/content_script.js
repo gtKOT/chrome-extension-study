@@ -30,6 +30,7 @@ document.addEventListener("click", ({ pageX, pageY }) => {
   }
 
   const box = createSearchBox(selectedText, pageX, pageY);
+  box.addEventListener("click", (e) => e.stopPropagation());
 
   document.body.appendChild(box);
 });
