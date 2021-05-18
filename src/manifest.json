@@ -1,5 +1,15 @@
 {
   "manifest_version": 3,
   "name": "mini extension",
-  "version": "0.0.1"
+  "version": "0.0.1",
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.esa.io/*"
+      ],
+      "js": [
+        "content_script.js"
+      ]
+    }
+  ]
 }
